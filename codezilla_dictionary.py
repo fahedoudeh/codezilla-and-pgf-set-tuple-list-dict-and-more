@@ -140,3 +140,5 @@ arabic_grade, history_grade]
 total_percentage = sum(ali_grades_lst) / len(ali_grades_lst)
 # print the total percentage of Ali
 print(f"Ali's total percentage is {total_percentage:.2f}%")
+
+#there are also different ways to solve this problem.
