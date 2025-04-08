@@ -117,7 +117,26 @@ students = {
 total_greades = sum(students['Ali']["grades"].values())
 len_grades = len(students["Ali"]["grades"].keys())
 print("Total grades: ", total_greades)
-max_score = len_grades * 100
-percentage = (total_greades / max_score) * 100
+# max_score = len_grades * 100
+# percentage = (total_greades / max_score) * 100
+percentage = total_greades / len_grades
+print(f"Total percentage of Ali's grades is: {int(percentage)}%")
 
-print(f"Total percentage of Ali's grades is: {percentage:.1f} %")
+
+
+# codezilla answer 
+### answer ###
+ali_grades = students["Ali"]["grades"]
+# get the grade of each subject
+math_grade = ali_grades["math"]
+english_grade = ali_grades["english"]
+science_grade = ali_grades["science"]
+arabic_grade = ali_grades["arabic"]
+history_grade = ali_grades["history"]
+# store the grades in a list
+ali_grades_lst = [math_grade, english_grade, science_grade,
+arabic_grade, history_grade]
+# getting the total percentage
+total_percentage = sum(ali_grades_lst) / len(ali_grades_lst)
+# print the total percentage of Ali
+print(f"Ali's total percentage is {total_percentage:.2f}%")
