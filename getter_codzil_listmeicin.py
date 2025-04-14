@@ -1,6 +1,3 @@
-
-
-
 pharmacy_prices = {
 "panadol": 32,
 "cold free": 25,
@@ -11,32 +8,32 @@ pharmacy_prices = {
 "vitamin c": 15
 }
 
-user_input = input("Enter the names of treatments separated by a comma (Press Enter to Exit) :\n").strip().lower()
-print('-'*20)
-
-treatments = user_input.split(", ")
-
-treatments_prices = {}
-
-for treatment in treatments:
-    treatments_prices[treatment] = pharmacy_prices.setdefault(treatment, 'Not Available')
-
-for treatment, price in treatments_prices.items():
-    print(f"{treatment.title()} : {price}")
-
-
-
-
-
-
-
-
-
-
-
-
+while True:
 
 # ask for input
+    user_input = input("Enter the names of treatments separated by a comma\
+(press Enter to Exit):\n").strip().lower()
+    
+    if user_input == "":
+        break
+
+    print("-" * 20)
+
+# Make a list of the treatments
+    treatment_list = [t.strip() for t in user_input.split(",")]
+    print(treatment_list)
+
+    # Loop over the list of treatments
+    for treatment in treatment_list:
+        if treatment in pharmacy_prices:
+            price = pharmacy_prices[treatment]
+            print(f"{treatment.title()}: ${price}")
+        else:
+            print(f"{treatment.title()} is not available.")
+
+    print("-" * 20)
+
+
 
 # if the treatment is not available inform the user
 
